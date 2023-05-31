@@ -17,12 +17,12 @@ package tcp
 import (
 	"sync"
 
-	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
-	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
-	"github.com/liuxp0827/net-protocol/stack"
 	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 // Forwarder is a connection request forwarder, which allows clients to decide
@@ -33,7 +33,7 @@ import (
 // to stack.SetTransportProtocolHandler.
 // Forwarder是一个连接请求转发器，它允许客户端决定如何处理连接请求，例如：忽略它，发送RST或尝试完成3次握手。
 //
-//使用它的规范方法是将Forwarder.HandlePacket函数传递给stack.SetTransportProtocolHandler。
+// 使用它的规范方法是将Forwarder.HandlePacket函数传递给stack.SetTransportProtocolHandler。
 type Forwarder struct {
 	maxInFlight int
 	handler     func(*ForwarderRequest)

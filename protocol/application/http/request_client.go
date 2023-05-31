@@ -5,16 +5,16 @@ import (
 	"strconv"
 )
 
-func (r *Request)init(path,ip string,port int)  {
+func (r *Request) init(path, ip string, port int) {
 	r.uri = path
 	r.port = port
 	r.headers.ptr = map[string]string{
-		"Host": ip+":" + strconv.Itoa(port),
+		"Host":       ip + ":" + strconv.Itoa(port),
 		"User-Agent": "net-protocol/5.0",
-		"Accept":"*/*",
+		"Accept":     "*/*",
 	}
 }
-func (r *Request) send()string{
+func (r *Request) send() string {
 	if r.method_raw == "" {
 		r.method_raw = "GET"
 	}
@@ -22,7 +22,7 @@ func (r *Request) send()string{
 	buf := ""
 	buf += r.method_raw + " "
 	buf += r.uri + " "
-	buf += "HTTP/1.1"+ "\r\n"
+	buf += "HTTP/1.1" + "\r\n"
 	for k, v := range r.headers.ptr {
 		buf += k
 		buf += ": "

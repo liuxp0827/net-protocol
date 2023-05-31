@@ -18,11 +18,11 @@ import (
 	"log"
 	"sync"
 
-	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	"github.com/google/netstack/sleep"
 )
 
 // NetworkEndpointID is the identifier of a network layer protocol endpoint.

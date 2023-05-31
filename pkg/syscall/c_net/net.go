@@ -13,15 +13,15 @@ import (
 	"unsafe"
 )
 
-//LxcBridgeAttach
-//bind the veth to bridge
+// LxcBridgeAttach
+// bind the veth to bridge
 func LxcBridgeAttach(bridge, ifname string) (state int, err error) {
 	b := C.CString(bridge)
 	defer C.free(unsafe.Pointer(b))
 
 	i := C.CString(ifname)
 	defer C.free(unsafe.Pointer(i))
-	cstate :=  C.lxc_bridge_attach(b,i)
+	cstate := C.lxc_bridge_attach(b, i)
 
 	state = int(cstate)
 	if cstate != 0 {
@@ -30,7 +30,7 @@ func LxcBridgeAttach(bridge, ifname string) (state int, err error) {
 	return
 }
 
-//GetHardwareAddr
+// GetHardwareAddr
 func GetHardwareAddr(name string) (string, error) {
 	n := C.CString(name)
 	defer C.free(unsafe.Pointer((n)))

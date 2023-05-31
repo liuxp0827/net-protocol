@@ -20,7 +20,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	"github.com/google/netstack/sleep"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 

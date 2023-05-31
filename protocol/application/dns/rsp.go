@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-//parseResp
-//解析响应
+// parseResp
+// 解析响应
 func (e *Endpoint) parseResp() (*[]header.DNSResource, error) {
 	rsp, err := e.c.Read()
 	if err != nil {

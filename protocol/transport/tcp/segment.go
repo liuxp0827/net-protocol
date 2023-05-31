@@ -19,8 +19,8 @@ import (
 	"sync/atomic"
 
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
-	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/stack"
 )
 

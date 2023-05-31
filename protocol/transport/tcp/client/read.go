@@ -6,7 +6,7 @@ import (
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
-//Read 一次性读取完缓冲区数据
+// Read 一次性读取完缓冲区数据
 func (c *Client) Read() ([]byte, error) {
 	<-c.notifyC
 	var buf []byte
@@ -26,7 +26,7 @@ func (c *Client) Read() ([]byte, error) {
 
 }
 
-//Readn  读取固定字节的数据
+// Readn  读取固定字节的数据
 func (c *Client) Readn(p []byte) (int, error) {
 	c.bufmu.Lock()
 	defer c.bufmu.Unlock()

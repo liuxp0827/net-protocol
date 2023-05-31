@@ -17,7 +17,7 @@ package tcp
 import (
 	"time"
 
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	"github.com/google/netstack/sleep"
 )
 
 type timerState int

@@ -5,7 +5,7 @@ import (
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
-//Write
+// Write
 func (c *Client) Write(buf []byte) *tcpip.Error {
 	v := buffer.View(buf)
 	for {

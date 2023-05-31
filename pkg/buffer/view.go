@@ -45,7 +45,7 @@ func (v *View) CapLength(length int) {
 	*v = (*v)[:length:length]
 }
 
-//NextBytes get next bytes
+// NextBytes get next bytes
 func (v *View) NextBytes(size int) []byte {
 	defer v.TrimFront(size)
 

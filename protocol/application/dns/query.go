@@ -2,7 +2,7 @@ package dns
 
 import "github.com/liuxp0827/net-protocol/protocol/header"
 
-//sendQuery udp query dns
+// sendQuery udp query dns
 func (e *Endpoint) sendQuery() (*[]header.DNSResource, error) {
 
 	if err := e.c.Connect(); err != nil {

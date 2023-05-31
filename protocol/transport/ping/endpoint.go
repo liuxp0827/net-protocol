@@ -18,12 +18,12 @@ import (
 	"encoding/binary"
 	"sync"
 
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
-	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/stack"
-	"github.com/liuxp0827/net-protocol/pkg/waiter"
 )
 
 // +stateify savable

@@ -19,8 +19,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
 	"github.com/liuxp0827/net-protocol/protocol/transport/tcp/testing/context"
 )

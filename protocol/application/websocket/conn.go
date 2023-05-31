@@ -37,7 +37,7 @@ const (
 	CloseMessage = 8
 )
 
-//websocket 连接
+// websocket 连接
 type Conn struct {
 	writeBuf []byte
 	maskKey  [4]byte
@@ -51,7 +51,7 @@ func (c *Conn) Close() {
 	c.conn.Close()
 }
 
-//发送数据
+// 发送数据
 func (c *Conn) SendData(data []byte) error {
 	length := len(data)
 	c.writeBuf = make([]byte, 10+length)
@@ -93,7 +93,7 @@ func (c *Conn) SendData(data []byte) error {
 	return c.conn.Write(c.writeBuf[:payloadStart+length])
 }
 
-//读取数据
+// 读取数据
 func (c *Conn) ReadData() (data []byte, err error) {
 	var b [8]byte
 	//读取数据帧的前两个字节

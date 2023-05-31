@@ -16,7 +16,7 @@ type muxEntry struct {
 
 var defaultMux ServeMux
 
-//handle
+// handle
 func (mu *ServeMux) dispatch(con *Connection) {
 	if _, exist := defaultMux.m[con.request.uri]; !exist {
 		con.set_status_code(400)
@@ -25,7 +25,7 @@ func (mu *ServeMux) dispatch(con *Connection) {
 	defaultMux.m[con.request.uri].h(con.request, con.response)
 }
 
-//HandleFunc handle pattern
+// HandleFunc handle pattern
 func (s *Server) HandleFunc(pattern string, handler func(*Request, *Response)) {
 	defaultMux.mu.Lock()
 	defer defaultMux.mu.Unlock()

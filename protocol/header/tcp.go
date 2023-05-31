@@ -17,8 +17,8 @@ package header
 import (
 	"encoding/binary"
 
-	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 const (

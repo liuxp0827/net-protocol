@@ -18,7 +18,7 @@ import (
 	"github.com/liuxp0827/net-protocol/stack/stackinit"
 )
 
-//Client client struct
+// Client client struct
 type Client struct {
 	s    *stack.Stack
 	ep   tcpip.Endpoint
@@ -36,7 +36,7 @@ type Client struct {
 	queue  waiter.Queue
 }
 
-//NewClient get new udp client
+// NewClient get new udp client
 func NewClient(addrName string, port int) *Client {
 	addr := tcpip.Address(net.ParseIP(addrName).To4())
 	return &Client{
@@ -45,12 +45,12 @@ func NewClient(addrName string, port int) *Client {
 	}
 }
 
-//Set set options
+// Set set options
 func (c *Client) Set(s *stack.Stack) {
 	c.s = s
 }
 
-//Connect connect
+// Connect connect
 func (c *Client) Connect() error {
 	c.s = stack.Pstack
 	if c.s == nil {

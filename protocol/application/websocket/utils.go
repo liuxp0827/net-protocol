@@ -8,7 +8,7 @@ import (
 
 var KeyGUID = []byte("258EAFA5-E914-47DA-95CA-C5AB0DC85B11")
 
-//握手阶段使用 加密key返回 进行握手
+// 握手阶段使用 加密key返回 进行握手
 func computeAcceptKey(challengeKey string) string {
 	h := sha1.New()
 	h.Write([]byte(challengeKey))
@@ -16,7 +16,7 @@ func computeAcceptKey(challengeKey string) string {
 	return base64.StdEncoding.EncodeToString(h.Sum(nil))
 }
 
-//解码
+// 解码
 func maskBytes(key [4]byte, b []byte) {
 	pos := 0
 	for i := range b {

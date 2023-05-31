@@ -16,14 +16,14 @@ type Request struct {
 	//原始版本
 	version_raw    string
 	uri            string
-	port 			int
+	port           int
 	headers        *http_headers
 	content_length int
 	//数据包 body
 	body string
 }
 
-//初始化一个httprequest
+// 初始化一个httprequest
 func newRequest() *Request {
 	var req Request
 	req.content_length = 0
@@ -34,7 +34,7 @@ func newRequest() *Request {
 
 }
 
-//解析httprequest
+// 解析httprequest
 func (req *Request) parse(con *Connection) {
 	buf := con.recv_buf
 
@@ -105,12 +105,12 @@ func (req *Request) parse(con *Connection) {
 	// 解析HTTP请求头部
 
 	p := buf
-	key, value,tmp := "", "",""
+	key, value, tmp := "", "", ""
 	for p != "" {
-		if key, tmp = match_until(p, ": ");key != "" {
+		if key, tmp = match_until(p, ": "); key != "" {
 			p = tmp
 		}
-		if value, tmp = match_until(p, "\r\n");value != "" {
+		if value, tmp = match_until(p, "\r\n"); value != "" {
 			p = tmp
 		}
 		if key == "" || value == "" {
@@ -122,19 +122,20 @@ func (req *Request) parse(con *Connection) {
 	req.body = p
 }
 
-//GetMethod d
+// GetMethod d
 func (req *Request) GetMethod() string {
 	return req.method_raw
 }
 
-//GetHeader header
+// GetHeader header
 func (req *Request) GetHeader(h string) string {
 	if _, exist := req.headers.ptr[h]; !exist {
 		return ""
 	}
 	return req.headers.ptr[h]
 }
-//GetBody get get|post data
-func (req *Request) GetBody()string{
+
+// GetBody get get|post data
+func (req *Request) GetBody() string {
 	return req.body
 }

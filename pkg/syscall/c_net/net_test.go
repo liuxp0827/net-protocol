@@ -3,7 +3,7 @@ package c_net
 import "testing"
 
 func TestLxcBridgeAttach(t *testing.T) {
-	code,err := LxcBridgeAttach("docker0","tap0")
+	code, err := LxcBridgeAttach("docker0", "tap0")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -11,7 +11,7 @@ func TestLxcBridgeAttach(t *testing.T) {
 }
 
 func TestGetHardwareAddr(t *testing.T) {
-	res,err := GetHardwareAddr("tap0")
+	res, err := GetHardwareAddr("tap0")
 	if err != nil {
 		t.Log(err)
 		t.Fatal(err)

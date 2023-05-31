@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("DNS lookuphost    : www.baidu.com")
 	defer d.Close()
 
-	ir, err := d.Resolve();
+	ir, err := d.Resolve()
 	if err != nil {
 		fmt.Println(err)
 		return

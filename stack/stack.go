@@ -29,9 +29,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/waiter"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/protocol/header"
@@ -47,7 +47,7 @@ const (
 	resolutionAttempts = 3
 )
 
-//Pstack global stack
+// Pstack global stack
 var Pstack *Stack
 
 type transportProtocolState struct {
@@ -398,9 +398,10 @@ func (s *Stack) SetNetworkProtocolOption(network tcpip.NetworkProtocolNumber, op
 // e.g.
 // var v ipv4.MyOption
 // err := s.NetworkProtocolOption(tcpip.IPv4ProtocolNumber, &v)
-// if err != nil {
-//   ...
-// }
+//
+//	if err != nil {
+//	  ...
+//	}
 func (s *Stack) NetworkProtocolOption(network tcpip.NetworkProtocolNumber, option interface{}) *tcpip.Error {
 	netProto, ok := s.networkProtocols[network]
 	if !ok {
@@ -425,9 +426,10 @@ func (s *Stack) SetTransportProtocolOption(transport tcpip.TransportProtocolNumb
 // values. This method returns an error if the protocol is not supported or
 // option is not supported by the protocol implementation.
 // var v tcp.SACKEnabled
-// if err := s.TransportProtocolOption(tcpip.TCPProtocolNumber, &v); err != nil {
-//   ...
-// }
+//
+//	if err := s.TransportProtocolOption(tcpip.TCPProtocolNumber, &v); err != nil {
+//	  ...
+//	}
 func (s *Stack) TransportProtocolOption(transport tcpip.TransportProtocolNumber, option interface{}) *tcpip.Error {
 	transProtoState, ok := s.transportProtocols[transport]
 	if !ok {
@@ -781,7 +783,7 @@ func (s *Stack) CheckNetworkProtocol(protocol tcpip.NetworkProtocolNumber) bool 
 // CheckLocalAddress determines if the given local address exists, and if it
 // does, returns the id of the NIC it's bound to. Returns 0 if the address
 // does not exist.
-//nicid 网卡id   protocol 协议号[arp|ipv4|...] 通过以太网协议第12-14字节获得  addr 地址
+// nicid 网卡id   protocol 协议号[arp|ipv4|...] 通过以太网协议第12-14字节获得  addr 地址
 func (s *Stack) CheckLocalAddress(nicid tcpip.NICID, protocol tcpip.NetworkProtocolNumber, addr tcpip.Address) tcpip.NICID {
 	s.mu.RLock()
 	log.Println("@网卡 stack: 协议解析 nicid:", nicid, " protocol:", protocol, " addr:", addr)

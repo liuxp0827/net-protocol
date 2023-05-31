@@ -11,8 +11,8 @@ type Client struct {
 	req    *Request
 }
 
-//NewCient new http client
-//NewClient("http://10.0.2.15:8080/")
+// NewCient new http client
+// NewClient("http://10.0.2.15:8080/")
 func NewClient(url string) (*Client, error) {
 	ip, port, path, err := buffer.ParseUrl(url)
 	if err != nil {
@@ -32,24 +32,24 @@ func NewClient(url string) (*Client, error) {
 	}, nil
 }
 
-//SetMethod
+// SetMethod
 func (c *Client) SetMethod(method string) {
 	c.req.method_raw = method
 }
 
-//SetHeaders
+// SetHeaders
 func (c *Client) SetHeaders(headers map[string]string) {
 	for k, v := range headers {
 		c.req.headers.ptr[k] = v
 	}
 }
 
-//SetData
+// SetData
 func (c *Client) SetData(buf string) {
 	c.req.body = buf
 }
 
-//GetResult
+// GetResult
 func (c *Client) GetResult() (string, error) {
 	if err := c.Push(); err != nil {
 		return "", err
@@ -57,7 +57,7 @@ func (c *Client) GetResult() (string, error) {
 	return c.con.request.GetBody(), nil
 }
 
-//GetBody
+// GetBody
 func (c *Client) Push() (err error) {
 	buf := c.req.send()
 	if err = c.client.Write([]byte(buf)); err != nil {
@@ -69,7 +69,7 @@ func (c *Client) Push() (err error) {
 	return
 }
 
-//GetConnection
+// GetConnection
 func (c *Client) GetConnection() *Connection {
 	return c.con
 }

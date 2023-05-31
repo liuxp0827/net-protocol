@@ -39,7 +39,7 @@ type Connection struct {
 	notifyC   chan struct{}
 }
 
-//等待并接受新的连接
+// 等待并接受新的连接
 func NewCon(e socket.Socket) *Connection {
 	var con Connection
 	//创建结构实例
@@ -58,31 +58,31 @@ func NewCon(e socket.Socket) *Connection {
 
 }
 
-//Close close the connection
+// Close close the connection
 func (con *Connection) Close() {
 	con.socket.Close()
 }
 
-//Write
+// Write
 func (con *Connection) Write(buf []byte) error {
 	return con.socket.Write(buf)
 }
 
-//Read 读取单次所有数据包 不等待直接返回
+// Read 读取单次所有数据包 不等待直接返回
 func (con *Connection) Read() ([]byte, error) {
 	return con.socket.Read()
 }
 
-//Readn 读取n字节
+// Readn 读取n字节
 func (con *Connection) Readn(p []byte) (int, error) {
 	return con.socket.Readn(p)
 }
 
-//HTTP 请求处理主函数
-//从socket中读取数据并解析http请求
-//解析请求
-//发送响应
-//记录请求日志
+// HTTP 请求处理主函数
+// 从socket中读取数据并解析http请求
+// 解析请求
+// 发送响应
+// 记录请求日志
 func (con *Connection) handler() {
 	log.Println("@应用层 http: waiting new event trigger ...")
 	v, _ := con.socket.Read()
@@ -94,7 +94,7 @@ func (con *Connection) handler() {
 	con.response.send()
 }
 
-// 设置状态
+//  设置状态
 func (c *Connection) set_status_code(code int) {
 	if c.status_code == 0 {
 		c.status_code = code

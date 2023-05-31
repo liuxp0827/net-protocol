@@ -14,7 +14,7 @@ const (
 	HTTP_METHOD_HEAD http_method = 2
 )
 
-//http 版本
+// http 版本
 type http_version int
 
 const (
@@ -24,7 +24,7 @@ const (
 	HTTP_VERSION_11
 )
 
-//接受状态
+// 接受状态
 type http_recv_state int
 
 const (

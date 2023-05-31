@@ -81,7 +81,7 @@ func (r *Response) send_response() {
 	r.build_and_send_response()
 }
 
-//End send the body
+// End send the body
 func (r *Response) End(buf string) {
 	r.entity_body = buf
 }
@@ -143,12 +143,12 @@ func (r *Response) send_all(buf string) {
 	r.con.socket.Write([]byte(buf))
 }
 
-//Error set status_code
+// Error set status_code
 func (r *Response) Error(code int) {
 	r.con.set_status_code(code)
 }
 
-//GetCon get
+// GetCon get
 func (r *Response) GetCon() *Connection {
 	return r.con
 }

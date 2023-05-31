@@ -19,11 +19,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/liuxp0827/net-protocol/pkg/sleep"
-	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
-	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 const (
@@ -664,7 +664,7 @@ func (s *sender) checkDuplicateAck(seg *segment) (rtx bool) {
 
 // handleRcvdSegment is called when a segment is received; it is responsible for
 // updating the send-related state.
-//收到段时调用 handleRcvdSegment; 它负责更新与发送相关的状态。
+// 收到段时调用 handleRcvdSegment; 它负责更新与发送相关的状态。
 func (s *sender) handleRcvdSegment(seg *segment) {
 	// Check if we can extract an RTT measurement from this ack.
 	// 如果rtt测量seq小于ack num，更新rto

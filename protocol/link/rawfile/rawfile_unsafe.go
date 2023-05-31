@@ -1,3 +1,6 @@
+//go:build linux
+// +build linux
+
 package rawfile
 
 // Copyright 2018 Google LLC
@@ -13,8 +16,6 @@ package rawfile
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-// +build linux
 
 // Package rawfile contains utilities for using the github.com/liuxp0827/net-protocol with raw host
 // files on Linux hosts.

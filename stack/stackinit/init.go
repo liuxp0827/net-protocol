@@ -19,7 +19,7 @@ import (
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
-//SetRoute 设置该路由信息
+// SetRoute 设置该路由信息
 func AddRoute(addr tcpip.Address) {
 	//未配置， 则自动随机获取网卡ipv4地址
 	firstIp, firstNic := ipv4.InternalInterfaces()

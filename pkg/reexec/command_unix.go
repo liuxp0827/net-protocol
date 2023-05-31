@@ -1,3 +1,4 @@
+//go:build freebsd || solaris
 // +build freebsd solaris
 
 package reexec

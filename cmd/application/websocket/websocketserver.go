@@ -24,7 +24,7 @@ func main() {
 	serv.ListenAndServ()
 }
 
-//websocket处理器
+// websocket处理器
 func echo(r *http.Request, w *http.Response) {
 	fmt.Println("got http request ; start to  upgrade websocket protocol....")
 	//协议升级 c *websocket.Conn

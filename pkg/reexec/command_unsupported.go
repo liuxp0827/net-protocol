@@ -1,3 +1,4 @@
+//go:build !linux && !windows && !freebsd && !solaris
 // +build !linux,!windows,!freebsd,!solaris
 
 package reexec

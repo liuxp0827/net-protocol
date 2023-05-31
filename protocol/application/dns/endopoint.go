@@ -21,8 +21,8 @@ type Endpoint struct {
 	c *client.Client
 }
 
-//NewEndpoint
-//support single domain query
+// NewEndpoint
+// support single domain query
 func NewEndpoint(domain string) *Endpoint {
 	id := gid + 1
 	return &Endpoint{
@@ -33,7 +33,7 @@ func NewEndpoint(domain string) *Endpoint {
 	}
 }
 
-//Resolve
+// Resolve
 func (e *Endpoint) Resolve() (*[]header.DNSResource, error) {
 
 	h := header.DNS(make([]byte, 12))
@@ -44,15 +44,12 @@ func (e *Endpoint) Resolve() (*[]header.DNSResource, error) {
 	return e.sendQuery()
 }
 
-//GetResp()
+// GetResp()
 func (e *Endpoint) GetResp() *header.DNS {
 	return e.resp
 }
 
-//Close close
+// Close close
 func (e *Endpoint) Close() {
 	e.c.Close()
 }
-
-
-

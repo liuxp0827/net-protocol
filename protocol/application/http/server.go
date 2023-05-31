@@ -22,7 +22,7 @@ import (
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
-//Server Http
+// Server Http
 type Server struct {
 	socket tcpip.Endpoint
 	port   int
@@ -30,7 +30,7 @@ type Server struct {
 	s      *stack.Stack
 }
 
-//NewHTTP usage:", os.Args[0], "<tap-device> <local-address/mask> <ipv4-address> <port>
+// NewHTTP usage:", os.Args[0], "<tap-device> <local-address/mask> <ipv4-address> <port>
 func NewHTTP(tapName, cidrName, addrName, portName string) *Server {
 	var server Server
 	log.Printf("@application listen:tap :%v addr :%v port :%v", tapName, addrName, portName)

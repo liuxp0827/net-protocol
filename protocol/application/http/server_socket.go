@@ -34,7 +34,7 @@ func NewServerSocket(e tcpip.Endpoint, q *waiter.Queue) *ServerSocket {
 	return s
 }
 
-//Write write
+// Write write
 func (s *ServerSocket) Write(buf []byte) error {
 	v := buffer.View(buf)
 	s.e.Write(tcpip.SlicePayload(v),
@@ -42,7 +42,7 @@ func (s *ServerSocket) Write(buf []byte) error {
 	return nil
 }
 
-//Read data
+// Read data
 func (s *ServerSocket) Read() ([]byte, error) {
 	<-s.notifyC
 	var buf []byte
@@ -62,7 +62,7 @@ func (s *ServerSocket) Read() ([]byte, error) {
 
 }
 
-//Readn  读取固定字节的数据
+// Readn  读取固定字节的数据
 func (s *ServerSocket) Readn(p []byte) (int, error) {
 	s.bufmu.Lock()
 	defer s.bufmu.Unlock()
@@ -95,27 +95,27 @@ func (s *ServerSocket) Readn(p []byte) (int, error) {
 	return n, nil
 }
 
-//GetAddr 获取客户端ip地址
+// GetAddr 获取客户端ip地址
 func (s *ServerSocket) GetAddr() tcpip.Address {
 	return ""
 }
 
-//GetRemoteAddr 获取远程客户端ip地址
+// GetRemoteAddr 获取远程客户端ip地址
 func (s *ServerSocket) GetRemoteAddr() *tcpip.FullAddress {
 	return &s.addr
 }
 
-//GetQueue 获取接收时间队列
+// GetQueue 获取接收时间队列
 func (s *ServerSocket) GetQueue() *waiter.Queue {
 	return s.queue
 }
 
-//GetNotify
+// GetNotify
 func (s *ServerSocket) GetNotify() chan struct{} {
 	return s.notifyC
 }
 
-//关闭连接
+// 关闭连接
 func (s *ServerSocket) Close() {
 	//注销接受队列
 	s.queue.EventUnregister(&s.waitEntry)

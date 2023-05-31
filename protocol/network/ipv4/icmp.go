@@ -18,9 +18,9 @@ import (
 	"encoding/binary"
 	"log"
 
-	"github.com/liuxp0827/net-protocol/stack"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/stack"
 
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
