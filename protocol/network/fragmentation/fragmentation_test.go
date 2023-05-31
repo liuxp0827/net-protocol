@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
 )
 
 // vv is a helper to build VectorisedView from different strings.

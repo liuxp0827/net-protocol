@@ -4,7 +4,7 @@ import (
 	"flag"
 	"net"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 //mac地址

@@ -24,12 +24,12 @@ import (
 	"log"
 	"sync/atomic"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/network/fragmentation"
-	"github.com/brewlin/net-protocol/protocol/network/hash"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/network/fragmentation"
+	"github.com/liuxp0827/net-protocol/protocol/network/hash"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 const (

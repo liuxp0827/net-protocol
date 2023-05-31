@@ -3,7 +3,7 @@ package client
 import (
 	"errors"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 //Read 一次性读取完缓冲区数据

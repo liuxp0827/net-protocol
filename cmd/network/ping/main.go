@@ -7,13 +7,13 @@ import (
 	"os"
 	"strings"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/link/fdbased"
-	"github.com/brewlin/net-protocol/protocol/link/tuntap"
-	"github.com/brewlin/net-protocol/protocol/network/arp"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/network/ipv6"
-	"github.com/brewlin/net-protocol/stack"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/link/fdbased"
+	"github.com/liuxp0827/net-protocol/protocol/link/tuntap"
+	"github.com/liuxp0827/net-protocol/protocol/network/arp"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv6"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 func main() {

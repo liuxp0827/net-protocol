@@ -21,14 +21,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/link/channel"
-	"github.com/brewlin/net-protocol/protocol/link/sniffer"
-	"github.com/brewlin/net-protocol/protocol/transport/ping"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/link/channel"
+	"github.com/liuxp0827/net-protocol/protocol/link/sniffer"
+	"github.com/liuxp0827/net-protocol/protocol/transport/ping"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 const (

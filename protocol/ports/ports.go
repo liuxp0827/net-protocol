@@ -21,7 +21,7 @@ import (
 	"math/rand"
 	"sync"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 const (

@@ -17,15 +17,15 @@ package ip_test
 import (
 	"testing"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/link/loopback"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/network/ipv6"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/protocol/transport/udp"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/link/loopback"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv6"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 const (

@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/sleep"
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 const linkAddrCacheSize = 512 // max cache entries

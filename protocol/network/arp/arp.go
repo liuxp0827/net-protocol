@@ -28,11 +28,11 @@ package arp
 import (
 	"log"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/stack"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 const (
@@ -110,10 +110,10 @@ func (e *endpoint) HandlePacket(r *stack.Route, vv buffer.VectorisedView) {
 		pkt.SetIpv4OverEthernet()
 		pkt.SetOp(header.ARPReply)
 		copy(pkt.HardwareAddressSender(), r.LocalLinkAddress[:])
-		copy(pkt.HardwareAddressTarget(),h.HardwareAddressSender())
+		copy(pkt.HardwareAddressTarget(), h.HardwareAddressSender())
 		copy(pkt.ProtocolAddressSender(), h.ProtocolAddressTarget())
 		copy(pkt.ProtocolAddressTarget(), h.ProtocolAddressSender())
-		log.Println("@网络层 arp: reply: 发送arp回复",h.ProtocolAddressSender(),h.HardwareAddressTarget())
+		log.Println("@网络层 arp: reply: 发送arp回复", h.ProtocolAddressSender(), h.HardwareAddressTarget())
 		e.linkEP.WritePacket(r, hdr, buffer.VectorisedView{}, ProtocolNumber)
 		// 注意这里的 fallthrough 表示需要继续执行下面分支的代码
 		// 当收到 arp 请求需要添加到链路地址缓存中

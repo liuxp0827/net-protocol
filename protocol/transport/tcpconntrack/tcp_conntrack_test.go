@@ -17,8 +17,8 @@ package tcpconntrack_test
 import (
 	"testing"
 
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/transport/tcpconntrack"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcpconntrack"
 )
 
 // connected creates a connection tracker TCB and sets it to a connected state

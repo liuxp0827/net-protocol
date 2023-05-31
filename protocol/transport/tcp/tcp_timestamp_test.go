@@ -20,13 +20,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/checker"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp/testing/context"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/checker"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp/testing/context"
 )
 
 // createConnectedWithTimestampOption creates and connects c.ep with the
@@ -35,7 +35,7 @@ func createConnectedWithTimestampOption(c *context.Context) *context.RawEndpoint
 	return c.CreateConnectedWithOptions(header.TCPSynOptions{TS: true, TSVal: 1})
 }
 
-// TestTimeStampEnabledConnect tests that github.com/brewlin/net-protocol sends the timestamp option on
+// TestTimeStampEnabledConnect tests that github.com/liuxp0827/net-protocol sends the timestamp option on
 // an active connect and sets the TS Echo Reply fields correctly when the
 // SYN-ACK also indicates support for the TS option and provides a TSVal.
 func TestTimeStampEnabledConnect(t *testing.T) {
@@ -115,7 +115,7 @@ func TestTimeStampEnabledConnect(t *testing.T) {
 	}
 }
 
-// TestTimeStampDisabledConnect tests that github.com/brewlin/net-protocol sends timestamp option on an
+// TestTimeStampDisabledConnect tests that github.com/liuxp0827/net-protocol sends timestamp option on an
 // active connect but if the SYN-ACK doesn't specify the TS option then
 // timestamp option is not enabled and future packets do not contain a
 // timestamp.

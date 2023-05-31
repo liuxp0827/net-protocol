@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/brewlin/net-protocol/config"
+	"github.com/liuxp0827/net-protocol/config"
 
-	"github.com/brewlin/net-protocol/protocol/link/tuntap"
+	"github.com/liuxp0827/net-protocol/protocol/link/tuntap"
 )
 
 func main() {

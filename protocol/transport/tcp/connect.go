@@ -20,14 +20,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/rand"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	"github.com/brewlin/net-protocol/pkg/sleep"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/rand"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 // maxSegmentsPerWake is the maximum number of segments to process in the main

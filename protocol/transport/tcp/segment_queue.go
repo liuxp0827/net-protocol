@@ -17,7 +17,7 @@ package tcp
 import (
 	"sync"
 
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 // segmentQueue is a bounded, thread-safe queue of TCP segments.

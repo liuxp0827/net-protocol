@@ -1,26 +1,26 @@
 package dns
 
 import (
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 	"strconv"
 	"strings"
 )
 
 //parseResp
 //解析响应
-func (e *Endpoint) parseResp() (*[]header.DNSResource,error){
-	rsp,err := e.c.Read()
+func (e *Endpoint) parseResp() (*[]header.DNSResource, error) {
+	rsp, err := e.c.Read()
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	p := header.DNS(rsp)
 	e.resp = &p
-	e.answer = p.GetAnswer( )
+	e.answer = p.GetAnswer()
 	return e.parseAnswer()
 }
 
-func (e *Endpoint) parseAnswer()(*[]header.DNSResource,error){
-	for i := 0; i < len(*e.answer) ; i++ {
+func (e *Endpoint) parseAnswer() (*[]header.DNSResource, error) {
+	for i := 0; i < len(*e.answer); i++ {
 		switch (*e.answer)[i].Type {
 		case header.A:
 			(*e.answer)[i].Address = e.parseAName((*e.answer)[i].RData)
@@ -28,21 +28,21 @@ func (e *Endpoint) parseAnswer()(*[]header.DNSResource,error){
 			(*e.answer)[i].Address = e.parseCName((*e.answer)[i].RData)
 		}
 	}
-	return e.answer,nil
+	return e.answer, nil
 }
-func (e *Endpoint)parseAName(rd []byte) string {
+func (e *Endpoint) parseAName(rd []byte) string {
 	res := []string{}
-	for _,v := range rd {
-		res = append(res,strconv.Itoa(int(v)))
+	for _, v := range rd {
+		res = append(res, strconv.Itoa(int(v)))
 	}
-	return strings.Join(res,".")
+	return strings.Join(res, ".")
 }
 
-func (e *Endpoint)parseCName(rd []byte) (res string) {
+func (e *Endpoint) parseCName(rd []byte) (res string) {
 
-	for{
+	for {
 		l := int(rd[0])
-		if l >= len(rd){
+		if l >= len(rd) {
 			res += ".com"
 			return
 		}

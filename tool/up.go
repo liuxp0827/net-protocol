@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/brewlin/net-protocol/config"
+	"github.com/liuxp0827/net-protocol/config"
 
-	"github.com/brewlin/net-protocol/protocol/link/tuntap"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/link/tuntap"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
 )
 
 func main() {

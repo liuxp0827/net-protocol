@@ -1,3 +1,3 @@
-module github.com/brewlin/net-protocol
+module github.com/liuxp0827/net-protocol
 
-go 1.12
+go 1.20

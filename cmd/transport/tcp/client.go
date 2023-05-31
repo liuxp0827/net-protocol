@@ -6,7 +6,7 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/brewlin/net-protocol/config"
+	"github.com/liuxp0827/net-protocol/config"
 )
 
 func main() {

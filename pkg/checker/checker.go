@@ -21,9 +21,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 // NetworkChecker is a function to check a property of a network packet.

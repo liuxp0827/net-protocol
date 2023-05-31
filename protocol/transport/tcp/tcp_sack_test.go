@@ -19,10 +19,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp/testing/context"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp/testing/context"
 )
 
 // createConnectWithSACKPermittedOption creates and connects c.ep with the

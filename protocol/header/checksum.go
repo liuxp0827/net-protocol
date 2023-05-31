@@ -17,7 +17,7 @@
 package header
 
 import (
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 // Checksum calculates the checksum (as defined in RFC 1071) of the bytes in the

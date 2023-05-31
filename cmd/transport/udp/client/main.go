@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	_ "github.com/brewlin/net-protocol/pkg/logging"
-	"github.com/brewlin/net-protocol/protocol/transport/udp/client"
+	_ "github.com/liuxp0827/net-protocol/pkg/logging"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp/client"
 )
 
 func main() {

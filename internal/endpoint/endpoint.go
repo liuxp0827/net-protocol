@@ -1,23 +1,24 @@
 package endpoint
 
 import (
-	"github.com/brewlin/net-protocol/config"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/link/fdbased"
-	"github.com/brewlin/net-protocol/protocol/link/tuntap"
-	"github.com/brewlin/net-protocol/protocol/network/arp"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/protocol/transport/udp"
-	"github.com/brewlin/net-protocol/stack"
-	"github.com/brewlin/net-protocol/stack/stackinit"
+	"github.com/liuxp0827/net-protocol/config"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/link/fdbased"
+	"github.com/liuxp0827/net-protocol/protocol/link/tuntap"
+	"github.com/liuxp0827/net-protocol/protocol/network/arp"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp"
+	"github.com/liuxp0827/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/stack/stackinit"
+	_ "github.com/liuxp0827/net-protocol/stack/stackinit"
 	"log"
 	"net"
-	_ "github.com/brewlin/net-protocol/stack/stackinit"
 	"strings"
 )
-//NewEndpoint 新建一个网卡端，默认注册 udp tcp arp ipv4等协议
-func NewEndpoint()*stack.Stack{
+
+// NewEndpoint 新建一个网卡端，默认注册 udp tcp arp ipv4等协议
+func NewEndpoint() *stack.Stack {
 	//如果已经存在 p 指向的stack 则不需要在初始化
 	if stack.Pstack != nil {
 		stackinit.AddRoute(config.LocalAddres)

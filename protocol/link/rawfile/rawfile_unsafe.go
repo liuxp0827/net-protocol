@@ -16,14 +16,14 @@ package rawfile
 
 // +build linux
 
-// Package rawfile contains utilities for using the github.com/brewlin/net-protocol with raw host
+// Package rawfile contains utilities for using the github.com/liuxp0827/net-protocol with raw host
 // files on Linux hosts.
 
 import (
 	"syscall"
 	"unsafe"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 // GetMTU determines the MTU of a network interface device.

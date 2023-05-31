@@ -19,11 +19,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/sleep"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
 )
 
 const (
@@ -341,7 +341,7 @@ func (s *sender) updateRTO(rtt time.Duration) {
 				s.rtt.Unlock()
 				return
 			}
-			// github.com/brewlin/net-protocol measures congestion window/inflight all in
+			// github.com/liuxp0827/net-protocol measures congestion window/inflight all in
 			// terms of packets and not bytes. This is similar to
 			// how linux also does cwnd and inflight. In practice
 			// this approximation works as expected.
@@ -488,7 +488,7 @@ func (s *sender) sendData() {
 		} else {
 			// We're sending a non-FIN segment.
 			if seg.flags&flagFin != 0 {
-				panic("github.com/brewlin/net-protocol queues FIN segments without data.")
+				panic("github.com/liuxp0827/net-protocol queues FIN segments without data.")
 			}
 
 			if !seg.sequenceNumber.LessThan(end) {
@@ -703,7 +703,7 @@ func (s *sender) handleRcvdSegment(seg *segment) {
 		//    some new data, i.e., only if it advances the left edge of
 		//    the send window.
 		if s.ep.sendTSOk && seg.parsedOptions.TSEcr != 0 {
-			// TSVal/Ecr values sent by github.com/brewlin/net-protocol are at a millisecond
+			// TSVal/Ecr values sent by github.com/liuxp0827/net-protocol are at a millisecond
 			// granularity.
 			elapsed := time.Duration(s.ep.timestamp()-seg.parsedOptions.TSEcr) * time.Millisecond
 			s.updateRTO(elapsed)

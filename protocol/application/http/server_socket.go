@@ -4,10 +4,10 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/waiter"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 type ServerSocket struct {
@@ -94,22 +94,27 @@ func (s *ServerSocket) Readn(p []byte) (int, error) {
 	s.buf = s.buf[len(p):]
 	return n, nil
 }
+
 //GetAddr 获取客户端ip地址
-func (s *ServerSocket)GetAddr()tcpip.Address{
+func (s *ServerSocket) GetAddr() tcpip.Address {
 	return ""
 }
+
 //GetRemoteAddr 获取远程客户端ip地址
-func (s *ServerSocket)GetRemoteAddr()*tcpip.FullAddress{
+func (s *ServerSocket) GetRemoteAddr() *tcpip.FullAddress {
 	return &s.addr
 }
+
 //GetQueue 获取接收时间队列
-func (s *ServerSocket)GetQueue()*waiter.Queue {
+func (s *ServerSocket) GetQueue() *waiter.Queue {
 	return s.queue
 }
+
 //GetNotify
-func (s *ServerSocket)GetNotify()chan struct{} {
+func (s *ServerSocket) GetNotify() chan struct{} {
 	return s.notifyC
 }
+
 //关闭连接
 func (s *ServerSocket) Close() {
 	//注销接受队列

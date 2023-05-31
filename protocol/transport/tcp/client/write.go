@@ -1,9 +1,10 @@
 package client
 
 import (
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
+
 //Write
 func (c *Client) Write(buf []byte) error {
 	v := buffer.View(buf)

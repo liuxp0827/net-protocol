@@ -5,19 +5,19 @@ import (
 	"log"
 	"net"
 
-	"github.com/brewlin/net-protocol/pkg/waiter"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
 
 	"sync"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/stack"
-	"github.com/brewlin/net-protocol/stack/stackinit"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/stack/stackinit"
 )
 
-//Client client struct
+// Client client struct
 type Client struct {
 	s    *stack.Stack
 	ep   tcpip.Endpoint
@@ -35,8 +35,7 @@ type Client struct {
 	queue  waiter.Queue
 }
 
-
-//NewClient get new tcp client
+// NewClient get new tcp client
 func NewClient(addrName string, port int) *Client {
 	addr := tcpip.Address(net.ParseIP(addrName).To4())
 	return &Client{
@@ -45,12 +44,12 @@ func NewClient(addrName string, port int) *Client {
 	}
 }
 
-//Set set options
+// Set set options
 func (c *Client) Set(s *stack.Stack) {
 	c.s = s
 }
 
-//Connect connect
+// Connect connect
 func (c *Client) Connect() error {
 	c.s = stack.Pstack
 	if c.s == nil {
@@ -98,4 +97,3 @@ func (c *Client) Close() {
 	c.ep.Close()
 	log.Println("@传输层 tcp/client :tcp disconnected")
 }
-

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/brewlin/net-protocol/protocol/application/http"
+	"github.com/liuxp0827/net-protocol/protocol/application/http"
 )
 
 func Upgrade(r *http.Request, w *http.Response) (c *Conn, err error) {

@@ -38,7 +38,7 @@ const (
 )
 
 const default_err_msg = "<HTML><HEAD><TITLE>ERROR</TITLE></HEAD><BODY><H1>SOMETING WRONG</H1></BODY></HTML>"
-const default_success_msg = "<HTML><HEAD><TITLE>SUCCESS</TITLE></HEAD><BODY><H1>github.com/brewlin/net-protocol/http</H1></BODY></HTML>"
+const default_success_msg = "<HTML><HEAD><TITLE>SUCCESS</TITLE></HEAD><BODY><H1>github.com/liuxp0827/net-protocol/http</H1></BODY></HTML>"
 
 var mime = map[string]string{
 	".html": "text/html",

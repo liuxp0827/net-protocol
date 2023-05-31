@@ -17,7 +17,7 @@ package tcp
 import (
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/sleep"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
 )
 
 type timerState int

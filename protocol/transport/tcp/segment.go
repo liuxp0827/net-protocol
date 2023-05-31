@@ -18,10 +18,10 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 // Flags that may be set in a TCP segment.

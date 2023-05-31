@@ -5,17 +5,17 @@ import (
 	"log"
 	"net"
 
-	"github.com/brewlin/net-protocol/protocol/transport/udp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp"
 
-	"github.com/brewlin/net-protocol/pkg/waiter"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
 
 	"sync"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/stack"
-	"github.com/brewlin/net-protocol/stack/stackinit"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/stack/stackinit"
 )
 
 //Client client struct

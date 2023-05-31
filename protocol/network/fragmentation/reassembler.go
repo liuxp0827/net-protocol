@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
 )
 
 type hole struct {

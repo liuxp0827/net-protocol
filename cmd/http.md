@@ -12,8 +12,8 @@ curl 192.168.1.1:8888/test
 import (
 	"fmt"
 
-	"github.com/brewlin/net-protocol/pkg/logging"
-	"github.com/brewlin/net-protocol/protocol/application/http"
+	"github.com/liuxp0827/net-protocol/pkg/logging"
+	"github.com/liuxp0827/net-protocol/protocol/application/http"
 )
 
 func init() {
@@ -50,10 +50,10 @@ Accept: */*
 @application http: header parse status_code: 0
 @application http:response send 构建http响应包体
 HTTP/1.1 200 ok
-Server: github.com/brewlin/net-protocol/1.00
+Server: github.com/liuxp0827/net-protocol/1.00
 Connection: close
 
-<HTML><HEAD><TITLE>SUCCESS</TITLE></HEAD><BODY><H1>github.com/brewlin/net-protocol/http</H1></BODY></HTML>
+<HTML><HEAD><TITLE>SUCCESS</TITLE></HEAD><BODY><H1>github.com/liuxp0827/net-protocol/http</H1></BODY></HTML>
 @application http: dispatch  close this request
 
 ```

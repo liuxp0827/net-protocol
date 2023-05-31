@@ -15,10 +15,10 @@
 package stack
 
 import (
-	"github.com/brewlin/net-protocol/pkg/sleep"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 // Route represents a route through the networking stack to a given destination.

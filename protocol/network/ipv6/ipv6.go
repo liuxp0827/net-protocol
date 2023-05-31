@@ -21,10 +21,10 @@
 package ipv6
 
 import (
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/stack"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 const (
@@ -39,7 +39,7 @@ const (
 	maxPayloadSize = 0xffff
 
 	// defaultIPv6HopLimit is the default hop limit for IPv6 Packets
-	// egressed by github.com/brewlin/net-protocol.
+	// egressed by github.com/liuxp0827/net-protocol.
 	defaultIPv6HopLimit = 255
 )
 

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"log"
 
-	"github.com/brewlin/net-protocol/protocol/application/http"
+	"github.com/liuxp0827/net-protocol/protocol/application/http"
 )
 
 const (
@@ -52,7 +52,7 @@ func (c *Conn) Close() {
 }
 
 //发送数据
-func (c *Conn) SendData(data []byte)error {
+func (c *Conn) SendData(data []byte) error {
 	length := len(data)
 	c.writeBuf = make([]byte, 10+length)
 

@@ -4,11 +4,11 @@ import (
 	"log"
 	"syscall"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/link/rawfile"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/link/rawfile"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 // 从NIC读取数据的多级缓存配置
@@ -38,7 +38,7 @@ type endpoint struct {
 	views      []buffer.View
 	dispatcher stack.NetworkDispatcher
 
-	//handleLocal 指示发往自身的数据包是由内部 github.com/brewlin/net-protocol 协议栈处理(true) 还是转发到FD端点（false)
+	//handleLocal 指示发往自身的数据包是由内部 github.com/liuxp0827/net-protocol 协议栈处理(true) 还是转发到FD端点（false)
 	handleLocal bool
 }
 

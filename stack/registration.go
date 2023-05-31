@@ -18,11 +18,11 @@ import (
 	"log"
 	"sync"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
 
-	"github.com/brewlin/net-protocol/pkg/sleep"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
 )
 
 // NetworkEndpointID is the identifier of a network layer protocol endpoint.

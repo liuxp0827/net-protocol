@@ -53,7 +53,7 @@ func (r *Response) send_http09_response() {
  */
 func (r *Response) send_response() {
 	h := r.headers
-	h.http_headers_add("Server", "github.com/brewlin/net-protocol/1.00")
+	h.http_headers_add("Server", "github.com/liuxp0827/net-protocol/1.00")
 	h.http_headers_add("Connection", "close")
 	if r.entity_body == "" {
 		r.entity_body = default_success_msg

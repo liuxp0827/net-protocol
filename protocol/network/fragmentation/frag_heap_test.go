@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
 )
 
 var reassambleTestCases = []struct {

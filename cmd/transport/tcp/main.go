@@ -9,16 +9,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/brewlin/net-protocol/protocol/link/loopback"
+	"github.com/liuxp0827/net-protocol/protocol/link/loopback"
 
-	"github.com/brewlin/net-protocol/pkg/waiter"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
 
-	"github.com/brewlin/net-protocol/protocol/network/arp"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/protocol/network/arp"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/stack"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 var mac = flag.String("mac", "aa:00:01:01:01:01", "mac address to use in tap device")

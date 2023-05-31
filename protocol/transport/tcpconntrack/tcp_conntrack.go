@@ -18,8 +18,8 @@
 package tcpconntrack
 
 import (
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
 )
 
 // Result is returned when the state of a TCB is updated in response to an

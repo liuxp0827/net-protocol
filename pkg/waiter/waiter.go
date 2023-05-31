@@ -60,7 +60,7 @@ package waiter
 import (
 	"sync"
 
-	"github.com/brewlin/net-protocol/pkg/ilist"
+	"github.com/liuxp0827/net-protocol/pkg/ilist"
 )
 
 // EventMask represents io events as used in the poll() syscall.

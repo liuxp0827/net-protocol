@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 func TestEncodeSACKBlocks(t *testing.T) {

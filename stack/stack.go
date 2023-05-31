@@ -29,13 +29,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	"github.com/brewlin/net-protocol/pkg/sleep"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/ports"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/pkg/sleep"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/ports"
 )
 
 const (
@@ -613,7 +613,7 @@ func (s *Stack) NICInfo() map[tcpip.NICID]NICInfo {
 	nics := make(map[tcpip.NICID]NICInfo)
 	for id, nic := range s.nics {
 		flags := NICStateFlags{
-			Up:          true, // github.com/brewlin/net-protocol interfaces are always up.
+			Up:          true, // github.com/liuxp0827/net-protocol interfaces are always up.
 			Running:     nic.linkEP.IsAttached(),
 			Promiscuous: nic.isPromiscuousMode(),
 			Loopback:    nic.linkEP.Capabilities()&CapabilityLoopback != 0,

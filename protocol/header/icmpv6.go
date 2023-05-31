@@ -17,7 +17,7 @@ package header
 import (
 	"encoding/binary"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 // ICMPv6 represents an ICMPv6 header stored in a byte array.

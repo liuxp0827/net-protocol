@@ -2,25 +2,24 @@ package main
 
 import (
 	"fmt"
-	"github.com/brewlin/net-protocol/config"
-	"github.com/brewlin/net-protocol/internal/endpoint"
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	_ "github.com/brewlin/net-protocol/pkg/logging"
-	_ "github.com/brewlin/net-protocol/pkg/logging"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/transport/udp"
-	"github.com/brewlin/net-protocol/protocol/transport/udp/client"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/config"
+	"github.com/liuxp0827/net-protocol/internal/endpoint"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	_ "github.com/liuxp0827/net-protocol/pkg/logging"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/udp/client"
+	"github.com/liuxp0827/net-protocol/stack"
 	"log"
 	"strconv"
 	"strings"
 
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
-//当前demo作为一个dns代理，接受dns请求并转发后，解析响应做一些操作
+// 当前demo作为一个dns代理，接受dns请求并转发后，解析响应做一些操作
 func main() {
 	s := endpoint.NewEndpoint()
 
@@ -59,17 +58,18 @@ func udploop(s *stack.Stack) {
 		//接收到代理请求
 		h := header.DNS(v)
 		fmt.Println("@main :接收到代理域名:", string(h[header.DOMAIN:header.DOMAIN+h.GetDomainLen()-1]))
-		go handle_proxy(v,ep,saddr)
+		go handle_proxy(v, ep, saddr)
 	}
 }
-//转发代理请求，并解析响应数据
-func handle_proxy(v buffer.View,ep tcpip.Endpoint,saddr tcpip.FullAddress){
-	cli := client.NewClient("8.8.8.8",53)
+
+// 转发代理请求，并解析响应数据
+func handle_proxy(v buffer.View, ep tcpip.Endpoint, saddr tcpip.FullAddress) {
+	cli := client.NewClient("8.8.8.8", 53)
 	cli.Connect()
 	cli.Write(v)
 	defer cli.Close()
 
-	rsp,err := cli.Read()
+	rsp, err := cli.Read()
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -82,27 +82,27 @@ func handle_proxy(v buffer.View,ep tcpip.Endpoint,saddr tcpip.FullAddress){
 	p := header.DNS(rsp)
 	answer := p.GetAnswer()
 
-	for i := 0; i < len(*answer) ; i++ {
+	for i := 0; i < len(*answer); i++ {
 		switch (*answer)[i].Type {
 		case header.A:
-			fmt.Println("dns 目标IP（A):",parseAName((*answer)[i].RData))
+			fmt.Println("dns 目标IP（A):", parseAName((*answer)[i].RData))
 		case header.CNAME:
-			fmt.Println("dns 目标IP（alias):",parseCName((*answer)[i].RData))
+			fmt.Println("dns 目标IP（alias):", parseCName((*answer)[i].RData))
 		}
 	}
 }
 func parseAName(rd []byte) string {
 	res := []string{}
-	for _,v := range rd {
-		res = append(res,strconv.Itoa(int(v)))
+	for _, v := range rd {
+		res = append(res, strconv.Itoa(int(v)))
 	}
-	return strings.Join(res,".")
+	return strings.Join(res, ".")
 }
 
 func parseCName(rd []byte) (res string) {
-	for{
+	for {
 		l := int(rd[0])
-		if l >= len(rd){
+		if l >= len(rd) {
 			res += ".com"
 			return
 		}

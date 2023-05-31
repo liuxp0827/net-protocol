@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/brewlin/net-protocol/protocol/link/rawfile"
-	"github.com/brewlin/net-protocol/protocol/link/tuntap"
+	"github.com/liuxp0827/net-protocol/protocol/link/rawfile"
+	"github.com/liuxp0827/net-protocol/protocol/link/tuntap"
 )
 
 func main() {

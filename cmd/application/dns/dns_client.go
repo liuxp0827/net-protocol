@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/brewlin/net-protocol/protocol/application/dns"
-	"github.com/brewlin/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/application/dns"
+	"github.com/liuxp0827/net-protocol/protocol/header"
 )
 
 func main() {
@@ -11,19 +11,18 @@ func main() {
 	fmt.Println("DNS lookuphost    : www.baidu.com")
 	defer d.Close()
 
-	ir,err := d.Resolve();
+	ir, err := d.Resolve();
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	for _,v := range *ir {
+	for _, v := range *ir {
 		switch v.Type {
 		case header.A:
-			fmt.Println("A(host name)      :",v.Address)
+			fmt.Println("A(host name)      :", v.Address)
 		case header.CNAME:
-			fmt.Println("CNAME (alias name):",v.Address)
+			fmt.Println("CNAME (alias name):", v.Address)
 		}
 	}
 
-	
 }

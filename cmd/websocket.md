@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/brewlin/net-protocol/pkg/logging"
-	"github.com/brewlin/net-protocol/protocol/application/http"
-	"github.com/brewlin/net-protocol/protocol/application/websocket"
+	"github.com/liuxp0827/net-protocol/pkg/logging"
+	"github.com/liuxp0827/net-protocol/protocol/application/http"
+	"github.com/liuxp0827/net-protocol/protocol/application/websocket"
 )
 
 func init() {

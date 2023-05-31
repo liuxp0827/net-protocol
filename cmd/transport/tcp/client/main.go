@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/brewlin/net-protocol/pkg/logging"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp/client"
-	_ "github.com/brewlin/net-protocol/stack/stackinit"
+	"github.com/liuxp0827/net-protocol/pkg/logging"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp/client"
+	_ "github.com/liuxp0827/net-protocol/stack/stackinit"
 )
 
 func init() {

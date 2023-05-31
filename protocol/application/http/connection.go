@@ -1,13 +1,13 @@
 package http
 
 import (
-	"github.com/brewlin/net-protocol/internal/socket"
+	"github.com/liuxp0827/net-protocol/internal/socket"
 	"log"
 	"sync"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
 )
 
 type Connection struct {
@@ -57,22 +57,27 @@ func NewCon(e socket.Socket) *Connection {
 	return &con
 
 }
+
 //Close close the connection
-func (con *Connection)Close()  {
+func (con *Connection) Close() {
 	con.socket.Close()
 }
+
 //Write
-func (con *Connection)Write(buf []byte)error{
+func (con *Connection) Write(buf []byte) error {
 	return con.socket.Write(buf)
 }
+
 //Read 读取单次所有数据包 不等待直接返回
-func (con *Connection)Read()([]byte,error){
+func (con *Connection) Read() ([]byte, error) {
 	return con.socket.Read()
 }
+
 //Readn 读取n字节
-func (con *Connection)Readn(p []byte)(int,error){
+func (con *Connection) Readn(p []byte) (int, error) {
 	return con.socket.Readn(p)
 }
+
 //HTTP 请求处理主函数
 //从socket中读取数据并解析http请求
 //解析请求
@@ -80,9 +85,9 @@ func (con *Connection)Readn(p []byte)(int,error){
 //记录请求日志
 func (con *Connection) handler() {
 	log.Println("@应用层 http: waiting new event trigger ...")
-	v,_ := con.socket.Read()
+	v, _ := con.socket.Read()
 	con.recv_buf = string(v)
-	log.Println("http协议原始数据:",con.recv_buf)
+	log.Println("http协议原始数据:", con.recv_buf)
 	con.request.parse(con)
 	//dispatch the route request
 	defaultMux.dispatch(con)

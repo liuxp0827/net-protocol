@@ -21,20 +21,20 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brewlin/net-protocol/pkg/buffer"
-	"github.com/brewlin/net-protocol/pkg/checker"
-	"github.com/brewlin/net-protocol/pkg/seqnum"
-	"github.com/brewlin/net-protocol/pkg/waiter"
-	tcpip "github.com/brewlin/net-protocol/protocol"
-	"github.com/brewlin/net-protocol/protocol/header"
-	"github.com/brewlin/net-protocol/protocol/link/loopback"
-	"github.com/brewlin/net-protocol/protocol/link/sniffer"
-	"github.com/brewlin/net-protocol/protocol/network/ipv4"
-	"github.com/brewlin/net-protocol/protocol/network/ipv6"
-	"github.com/brewlin/net-protocol/protocol/ports"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp"
-	"github.com/brewlin/net-protocol/protocol/transport/tcp/testing/context"
-	"github.com/brewlin/net-protocol/stack"
+	"github.com/liuxp0827/net-protocol/pkg/buffer"
+	"github.com/liuxp0827/net-protocol/pkg/checker"
+	"github.com/liuxp0827/net-protocol/pkg/seqnum"
+	"github.com/liuxp0827/net-protocol/pkg/waiter"
+	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"github.com/liuxp0827/net-protocol/protocol/header"
+	"github.com/liuxp0827/net-protocol/protocol/link/loopback"
+	"github.com/liuxp0827/net-protocol/protocol/link/sniffer"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv4"
+	"github.com/liuxp0827/net-protocol/protocol/network/ipv6"
+	"github.com/liuxp0827/net-protocol/protocol/ports"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp"
+	"github.com/liuxp0827/net-protocol/protocol/transport/tcp/testing/context"
+	"github.com/liuxp0827/net-protocol/stack"
 )
 
 const (
@@ -587,7 +587,7 @@ func TestRstOnCloseWithUnreadData(t *testing.T) {
 	)
 
 	// Now that we know we have unread data, let's just close the connection
-	// and verify that github.com/brewlin/net-protocol sends an RST rather than a FIN.
+	// and verify that github.com/liuxp0827/net-protocol sends an RST rather than a FIN.
 	c.EP.Close()
 
 	checker.IPv4(t, c.GetPacket(),
@@ -2449,7 +2449,7 @@ func DisabledTestFastRecovery(t *testing.T) {
 	// At this point, the cwnd should reset to expected/2 and there are 10
 	// packets outstanding.
 	//
-	// NOTE: Technically github.com/brewlin/net-protocol is incorrect in that we adjust the cwnd on
+	// NOTE: Technically github.com/liuxp0827/net-protocol is incorrect in that we adjust the cwnd on
 	// the same segment that takes us out of recovery. But because of that
 	// the actual cwnd at exit of recovery will be expected/2 + 1 as we
 	// acked a cwnd worth of packets which will increase the cwnd further by
@@ -3319,7 +3319,7 @@ func TestPathMTUDiscovery(t *testing.T) {
 	sizes := []int{maxPayload, maxPayload, writeSize - 2*maxPayload}
 	first := receivePackets(c, sizes, 0, uint32(c.IRS)+1)
 
-	// Send "packet too big" messages back to github.com/brewlin/net-protocol.
+	// Send "packet too big" messages back to github.com/liuxp0827/net-protocol.
 	const newMTU = 1200
 	const newMaxPayload = newMTU - header.IPv4MinimumSize - header.TCPMinimumSize
 	mtu := []byte{0, 0, newMTU / 256, newMTU % 256}
