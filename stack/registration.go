@@ -22,7 +22,7 @@ import (
 	"github.com/liuxp0827/net-protocol/pkg/waiter"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 
-	"github.com/google/netstack/sleep"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 // NetworkEndpointID is the identifier of a network layer protocol endpoint.

@@ -19,11 +19,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/protocol/header"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 const (

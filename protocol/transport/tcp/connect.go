@@ -20,7 +20,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	"github.com/liuxp0827/net-protocol/pkg/rand"
 	"github.com/liuxp0827/net-protocol/pkg/seqnum"
@@ -28,6 +27,7 @@ import (
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/protocol/header"
 	"github.com/liuxp0827/net-protocol/stack"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 // maxSegmentsPerWake is the maximum number of segments to process in the main

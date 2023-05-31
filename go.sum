@@ -1,2 +1,4 @@
-github.com/google/netstack v0.0.0-20191123085552-55fcc16cd0eb h1:/YcrD0GSdU5gtckXHVjSEd0Y6VgboNW7VYyImZS3y6g=
-github.com/google/netstack v0.0.0-20191123085552-55fcc16cd0eb/go.mod h1:r/rILWg3r1Qy9G1IFMhsqWLq2GjwuYoTuPgG7ckMAjk=
+golang.org/x/sys v0.4.0 h1:Zr2JFtRQNX3BCZ8YtxRE9hNJYC8J6I1MVbMg6owUp18=
+golang.org/x/time v0.0.0-20220210224613-90d013bbcef8 h1:vVKdlvoWBphwdxWKrFZEuM0kGgGLxUOYcY4U/2Vjg44=
+gvisor.dev/gvisor v0.0.0-20230531054819-543a60e4a13d h1:eAQqExr3yqPNRqvIgwfgp7tSqSqAmJDnHekcWXJxX/I=
+gvisor.dev/gvisor v0.0.0-20230531054819-543a60e4a13d/go.mod h1:sQuqOkxbfJq/GS2uSnqHphtXclHyk/ZrAGhZBxxsq6g=

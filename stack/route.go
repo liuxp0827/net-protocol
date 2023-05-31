@@ -15,10 +15,10 @@
 package stack
 
 import (
-	"github.com/google/netstack/sleep"
 	"github.com/liuxp0827/net-protocol/pkg/buffer"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
 	"github.com/liuxp0827/net-protocol/protocol/header"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 // Route represents a route through the networking stack to a given destination.

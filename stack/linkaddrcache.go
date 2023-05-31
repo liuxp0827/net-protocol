@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/google/netstack/sleep"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 const linkAddrCacheSize = 512 // max cache entries

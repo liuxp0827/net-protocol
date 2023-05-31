@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/google/netstack/sleep"
 	tcpip "github.com/liuxp0827/net-protocol/protocol"
+	"gvisor.dev/gvisor/pkg/sleep"
 )
 
 type testaddr struct {
